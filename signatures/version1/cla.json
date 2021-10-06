@@ -1,3 +1,12 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "suin",
+      "id": 855338,
+      "comment_id": 937072561,
+      "created_at": "2021-10-06T20:29:18Z",
+      "repoId": 414352747,
+      "pullRequestNo": 1
+    }
+  ]
 }
