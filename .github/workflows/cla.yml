@@ -3,7 +3,7 @@ on:
   issue_comment:
     types: [created]
   pull_request_target:
-    types: [opened,closed,synchronize]
+    types: [opened, closed, synchronize]
 
 env:
   CLI_DOC: https://github.com/suinplayground/cla-assistant-demo/blob/main/CLA.md
@@ -25,15 +25,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # the below token should have repo scope and must be manually added by you in the repository's secret
-          PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
-          path-to-signatures: 'signatures/version3/cla.json'
+          path-to-signatures: "signatures/version3/cla.json"
           path-to-document: ${{ env.CLI_DOC }}
           # branch should not be protected
-          branch: 'main'
+          branch: "main"
           #allowlist: user1,bot*
           create-file-commit-message: "chore(cla): CLA署名ファイルを作成しました。"
-          signed-commit-message: 'chore(cla): $contributorName さんが #$pullRequestNo にてCLAに署名しました。'
+          signed-commit-message: "chore(cla): $contributorName さんが #$pullRequestNo にてCLAに署名しました。"
           custom-notsigned-prcomment: |
             プルリクエストをお送りくださりありがとうございます！
             頂いたプルリクエストをマージする前に、[CLA](${{ env.CLI_DOC }})への同意をお願いしております。
